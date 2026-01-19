@@ -1,1 +1,53 @@
 @import 'tailwindcss';
+
+@theme {
+  --color-primary-light: #14b8a6;
+  --color-primary: #0d9488;
+  --color-primary-dark: #0f766e;
+
+  --color-secondary-light: #14b8a6;
+  --color-secondary: #0d9488;
+  --color-secondary-dark: #0f766e;
+
+  --color-success: #22c55e;
+  --color-warning: #facc15;
+
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f4f4f5;
+  --color-neutral-200: #e4e4e7;
+  --color-neutral-300: #d4d4d8;
+  --color-neutral-400: #a1a1aa;
+  --color-neutral-500: #71717a;
+  --color-neutral-600: #52525b;
+  --color-neutral-700: #3f3f46;
+  --color-neutral-800: #27272a;
+  --color-neutral-900: #18181b;
+}
+
+body {
+  @apply bg-neutral-50;
+}
+
+h1 {
+  @apply text-[32px] font-medium leading-8;
+}
+
+h2 {
+  @apply text-[24px] font-medium leading-6;
+}
+
+h3 {
+  @apply text-[20px] font-medium leading-5;
+}
+
+h4 {
+  @apply text-[16px] font-medium leading-4;
+}
+
+p {
+  @apply text-[16px] font-normal leading-4;
+}
+
+.card {
+  @apply bg-white rounded-2xl p-8 border border-neutral-200;
+}
