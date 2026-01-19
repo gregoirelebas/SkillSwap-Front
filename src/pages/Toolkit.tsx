@@ -41,7 +41,7 @@ export default function Toolkit() {
   return (
     <div className="flex flex-col gap-20 p-20">
       {/* Typography Section */}
-      <div className="card flex flex-col items-center justify-center gap-10">
+      <div className="card column gap-10">
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
         <h3>Heading 3</h3>
@@ -54,24 +54,24 @@ export default function Toolkit() {
       </div>
 
       {/* Colors Section */}
-      <div className="flex flex-col gap-5">
+      <div className="column gap-5">
         <div className="grid grid-cols-3 gap-10">
-          <div className="card flex flex-col items-center gap-5">
+          <div className="card column gap-5">
             <h2>Primary Colors</h2>
-            <div className="flex justify-center items-center">{primaryColorBoxes}</div>
+            <div className="row">{primaryColorBoxes}</div>
           </div>
-          <div className="card flex flex-col items-center gap-5">
+          <div className="card column gap-5">
             <h2>Secondary Colors</h2>
-            <div className="flex justify-center items-center">{secondaryColorBoxes}</div>
+            <div className="row">{secondaryColorBoxes}</div>
           </div>
-          <div className="card flex flex-col items-center gap-5">
+          <div className="card column gap-5">
             <h2>Semantic Colors</h2>
-            <div className="flex justify-center items-center">{semanticColorBoxes}</div>
+            <div className="row">{semanticColorBoxes}</div>
           </div>
         </div>
-        <div className="card flex flex-col items-center gap-5">
+        <div className="card column gap-5">
           <h2>Neutral shades</h2>
-          <div className="flex">{neutralColorBoxes}</div>
+          <div className="row">{neutralColorBoxes}</div>
         </div>
       </div>
     </div>

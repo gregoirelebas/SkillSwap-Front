@@ -51,3 +51,11 @@ p {
 .card {
   @apply bg-white rounded-2xl p-8 border border-neutral-200;
 }
+
+.row {
+  @apply flex justify-center items-center;
+}
+
+.column {
+  @apply flex flex-col justify-center items-center;
+}
