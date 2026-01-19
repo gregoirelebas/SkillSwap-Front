@@ -38,10 +38,33 @@ export default function Toolkit() {
     <ColorBox key={colorClass} colorClass={colorClass} />
   ));
 
+  const buttonVariants = [
+    'btn-primary',
+    'btn-secondary',
+    'btn-ghost',
+    'btn-success',
+    'btn-warning',
+    'btn-danger',
+  ];
+
+  const buttonBoxes = buttonVariants.map((variant) => (
+    <div className="column gap-5">
+      <h3>
+        {variant.replace('btn-', '').charAt(0).toUpperCase() + variant.replace('btn-', '').slice(1)}
+      </h3>
+      <div className="row gap-2">
+        <button className={`btn ${variant}`}>Active</button>
+        <button className={`btn ${variant}`} disabled>
+          Disabled
+        </button>
+      </div>
+    </div>
+  ));
+
   return (
-    <div className="flex flex-col gap-20 p-20">
+    <div className="column gap-20 p-20">
       {/* Typography Section */}
-      <div className="card column gap-10">
+      <div className="card column w-full gap-10">
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
         <h3>Heading 3</h3>
@@ -54,8 +77,8 @@ export default function Toolkit() {
       </div>
 
       {/* Colors Section */}
-      <div className="column gap-5">
-        <div className="grid grid-cols-3 gap-10">
+      <div className="column w-full gap-5">
+        <div className="w-full grid grid-cols-3 gap-10">
           <div className="card column gap-5">
             <h2>Primary Colors</h2>
             <div className="row">{primaryColorBoxes}</div>
@@ -69,10 +92,16 @@ export default function Toolkit() {
             <div className="row">{semanticColorBoxes}</div>
           </div>
         </div>
-        <div className="card column gap-5">
+        <div className="card column w-full gap-5">
           <h2>Neutral shades</h2>
           <div className="row">{neutralColorBoxes}</div>
         </div>
+      </div>
+
+      {/* Buttons Section */}
+      <div className="card column w-full gap-10">
+        <h1>Buttons</h1>
+        <div className="row gap-10">{buttonBoxes}</div>
       </div>
     </div>
   );
