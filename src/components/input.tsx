@@ -1,3 +1,5 @@
+import '../styles/input.css';
+
 import React from 'react';
 
 interface InputProps {
