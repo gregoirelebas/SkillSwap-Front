@@ -1,3 +1,6 @@
+import Input from '../components/input';
+import useInput from '../hooks/useInput';
+
 export default function Toolkit() {
   function ColorBox({ colorClass }: { colorClass: string }) {
     return <div className={`w-32 h-32 m-4 ${colorClass}`}></div>;
@@ -48,7 +51,7 @@ export default function Toolkit() {
   ];
 
   const buttonBoxes = buttonVariants.map((variant) => (
-    <div className="column gap-5">
+    <div key={variant} className="column gap-5">
       <h3>
         {variant.replace('btn-', '').charAt(0).toUpperCase() + variant.replace('btn-', '').slice(1)}
       </h3>
@@ -60,6 +63,23 @@ export default function Toolkit() {
       </div>
     </div>
   ));
+
+  const okInput = useInput('', checkOKInput);
+
+  function handleSubmit(event: React.FormEvent) {
+    event.preventDefault();
+
+    const isValid = checkOKInput(okInput.value);
+    okInput.setIsValid(isValid);
+
+    if (!isValid) {
+      return;
+    }
+  }
+
+  function checkOKInput(value: unknown) {
+    return (value as string) === 'OK';
+  }
 
   return (
     <div className="column gap-20 p-20">
@@ -102,6 +122,24 @@ export default function Toolkit() {
       <div className="card column w-full gap-10">
         <h1>Buttons</h1>
         <div className="row gap-10">{buttonBoxes}</div>
+      </div>
+
+      {/* Form elements */}
+      <div className="card w-full">
+        <form onSubmit={handleSubmit}>
+          <Input
+            label="Input label"
+            isValid={okInput.isValid}
+            error="Input is only valid if it is 'OK'"
+            inputProps={{
+              id: 'ok-input',
+              type: 'text',
+              placeholder: 'Type OK to be valid',
+              value: okInput.value as string,
+              onChange: okInput.onChange,
+            }}
+          />
+        </form>
       </div>
     </div>
   );
