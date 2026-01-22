@@ -131,15 +131,13 @@ export default function Toolkit() {
         <form className="flex flex-col gap-10 mt-5" onSubmit={handleSubmit}>
           <Input
             label="Input label"
+            id="ok-input"
             isValid={okInput.isValid}
             error="Input is only valid if it is 'OK'"
-            inputProps={{
-              id: 'ok-input',
-              type: 'text',
-              placeholder: 'Type OK to be valid',
-              value: okInput.value as string,
-              onChange: okInput.onChange,
-            }}
+            type="text"
+            placeholder="Type OK to be valid"
+            value={okInput.value as string}
+            onChange={okInput.onChange}
           />
 
           <div className="flex gap-5">
