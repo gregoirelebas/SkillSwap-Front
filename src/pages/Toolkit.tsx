@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import Checkbox from '../components/checkbox';
 import Input from '../components/input';
+import Slider from '../components/slider';
 import useInput from '../hooks/useInput';
 
 export default function Toolkit() {
@@ -82,6 +84,8 @@ export default function Toolkit() {
     return (value as string) === 'OK';
   }
 
+  const [sliderValue, setSliderValue] = useState(50);
+
   return (
     <div className="column gap-20 p-20">
       {/* Typography Section */}
@@ -145,6 +149,18 @@ export default function Toolkit() {
             <Checkbox id="option2" label="Option 2" value={'option2'} />
             <Checkbox id="option3" label="Option 3" value={'option3'} />
           </div>
+
+          <Slider
+            label="Example Slider"
+            id="slider"
+            value={sliderValue}
+            min={-10}
+            max={100}
+            step={10}
+            unit="%"
+            displayMax={true}
+            onChange={(e) => setSliderValue(Number(e.currentTarget.value))}
+          />
         </form>
       </div>
     </div>
