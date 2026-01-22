@@ -1,3 +1,4 @@
+import Checkbox from '../components/checkbox';
 import Input from '../components/input';
 import useInput from '../hooks/useInput';
 
@@ -126,7 +127,8 @@ export default function Toolkit() {
 
       {/* Form elements */}
       <div className="card w-full">
-        <form onSubmit={handleSubmit}>
+        <h1 className="text-center">Form Elements</h1>
+        <form className="flex flex-col gap-10 mt-5" onSubmit={handleSubmit}>
           <Input
             label="Input label"
             isValid={okInput.isValid}
@@ -139,6 +141,12 @@ export default function Toolkit() {
               onChange: okInput.onChange,
             }}
           />
+
+          <div className="flex gap-5">
+            <Checkbox id="option1" label="Option 1" value={'option1'} />
+            <Checkbox id="option2" label="Option 2" value={'option2'} />
+            <Checkbox id="option3" label="Option 3" value={'option3'} />
+          </div>
         </form>
       </div>
     </div>
