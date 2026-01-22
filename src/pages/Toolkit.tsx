@@ -154,9 +154,9 @@ export default function Toolkit() {
             label="Example Slider"
             id="slider"
             value={sliderValue}
-            min={-10}
+            min={0}
             max={100}
-            step={10}
+            step={1}
             unit="%"
             displayMax={true}
             onChange={(e) => setSliderValue(Number(e.currentTarget.value))}
