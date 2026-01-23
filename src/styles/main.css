@@ -54,6 +54,10 @@ p {
   @apply text-[16px] font-normal leading-4;
 }
 
+a {
+  @apply text-neutral-700 hover:text-primary transition-all duration-200 cursor-pointer;
+}
+
 .card {
   @apply bg-white rounded-2xl p-8 border border-neutral-200;
 }
