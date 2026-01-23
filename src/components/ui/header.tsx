@@ -6,6 +6,7 @@ import profilePicture from '../../assets/profil.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { faComments } from '@fortawesome/free-regular-svg-icons/faComments';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   const searchInput = useInput('');
@@ -31,32 +32,35 @@ export default function Header() {
   return (
     <header className="w-full h-20 flex justify-center items-center gap-15 fixed top-0 left-0 bg-white shadow-sm z-10 border-b border-neutral-200 px-6 py-3">
       {/* Logo Section */}
-      <div className="flex items-center gap-3 cursor-pointer">
-        <div className="w-10 h-10 bg-linear-to-br from-primary to-primary-light rounded-lg flex items-center justify-center text-white shadow-sm">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M7 10L12 5L17 10M17 14L12 19L7 14"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M12 5V12M12 12V19"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              opacity="0.5"
-            />
-          </svg>
+      <Link to="/">
+        <div className="flex items-center gap-3 cursor-pointer">
+          <div className="w-10 h-10 bg-linear-to-br from-primary to-primary-light rounded-lg flex items-center justify-center text-white shadow-sm">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M7 10L12 5L17 10M17 14L12 19L7 14"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M12 5V12M12 12V19"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                opacity="0.5"
+              />
+            </svg>
+          </div>
+          <span className="text-lg text-primary font-semibold">SkillSwap</span>
         </div>
-        <span className="text-lg text-primary font-semibold">SkillSwap</span>
-      </div>
+      </Link>
+
       {/* Search Input */}
       <form className="w-full max-w-md" onSubmit={search}>
         <Input
@@ -69,21 +73,34 @@ export default function Header() {
       </form>
       {/* Navigation Links */}
       <nav className="row gap-5">
-        <a href="#explore">Explore</a>
-        <a href="#categories">Categories</a>
-        <a href="#how-it-works">How it works</a>
+        <Link to="/explore">
+          {' '}
+          <a>Explore</a>
+        </Link>
+        <Link to="/categories">
+          <a>Categories</a>
+        </Link>
+        <Link to="/how-it-works">
+          <a>How it works</a>
+        </Link>
       </nav>
       {/* User Actions */}
       <div className="row gap-5">
-        <div className=" bg-amber-300/20 px-4 py-2 rounded-full border border-amber-700">
-          <div className="row gap-1">
-            <FontAwesomeIcon icon={faCoins} className="text-amber-700" />
-            <span className="text-amber-700">5 credits</span>
-          </div>
-        </div>
-        <a href="#chat" className="text-lg rounded-lg p-2 hover:bg-neutral-200">
-          <FontAwesomeIcon icon={faComments} />
-        </a>
+        {isUserLoggedIn && (
+          <>
+            <div className=" bg-amber-300/20 px-4 py-2 rounded-full border border-amber-700">
+              <div className="row gap-1">
+                <FontAwesomeIcon icon={faCoins} className="text-amber-700" />
+                <span className="text-amber-700">5 credits</span>
+              </div>
+            </div>
+            <Link to="/chat">
+              <a className="text-lg rounded-lg p-2 hover:bg-neutral-200">
+                <FontAwesomeIcon icon={faComments} />
+              </a>
+            </Link>
+          </>
+        )}
         <button className="btn btn-secondary">Post a service</button>{' '}
       </div>
 

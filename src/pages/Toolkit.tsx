@@ -87,7 +87,7 @@ export default function Toolkit() {
   const [sliderValue, setSliderValue] = useState(50);
 
   return (
-    <div className="column gap-20 p-20">
+    <div className="column gap-20 mt-5 p-20">
       {/* Typography Section */}
       <div className="card column w-full gap-10">
         <h1>Heading 1</h1>
