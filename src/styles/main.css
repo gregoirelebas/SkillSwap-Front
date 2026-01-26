@@ -30,71 +30,71 @@
   --color-neutral-900: #18181b;
 }
 
-body {
-  @apply bg-neutral-50;
+@layer base {
+  h1 {
+    @apply text-[32px] font-medium leading-8;
+  }
+
+  h2 {
+    @apply text-[24px] font-medium leading-6;
+  }
+
+  h3 {
+    @apply text-[20px] font-medium leading-5;
+  }
+
+  h4 {
+    @apply text-[16px] font-medium leading-4;
+  }
+
+  p {
+    @apply text-[16px] font-normal;
+  }
 }
 
-h1 {
-  @apply text-[32px] font-medium leading-8;
-}
+@layer components {
+  .link {
+    @apply text-neutral-700 hover:text-primary transition-all duration-200 cursor-pointer;
+  }
 
-h2 {
-  @apply text-[24px] font-medium leading-6;
-}
+  .card {
+    @apply bg-white rounded-2xl p-8 border border-neutral-200;
+  }
 
-h3 {
-  @apply text-[20px] font-medium leading-5;
-}
+  .row {
+    @apply flex justify-center items-center;
+  }
 
-h4 {
-  @apply text-[16px] font-medium leading-4;
-}
+  .column {
+    @apply flex flex-col justify-center items-center;
+  }
 
-p {
-  @apply text-[16px] font-normal leading-4;
-}
-
-.link {
-  @apply text-neutral-700 hover:text-primary transition-all duration-200 cursor-pointer;
-}
-
-.card {
-  @apply bg-white rounded-2xl p-8 border border-neutral-200;
-}
-
-.row {
-  @apply flex justify-center items-center;
-}
-
-.column {
-  @apply flex flex-col justify-center items-center;
-}
-
-.btn {
-  @apply flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg transition-all duration-200 text-white shadow-sm cursor-pointer
+  .btn {
+    @apply flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg transition-all duration-200 text-white shadow-sm cursor-pointer
   active:scale-95 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-sm;
-}
+  }
 
-.btn-primary {
-  @apply bg-primary hover:bg-primary-dark disabled:hover:bg-primary-light;
-}
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark disabled:hover:bg-primary-light;
+  }
 
-.btn-secondary {
-  @apply bg-secondary hover:bg-secondary-dark disabled:hover:bg-secondary-light;
-}
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary-dark disabled:hover:bg-secondary-light;
+  }
 
-.btn-ghost {
-  @apply bg-white text-primary border border-neutral-300  hover:border-primary;
-}
+  .btn-ghost {
+    @apply bg-white text-primary border border-neutral-300  hover:border-primary;
+  }
 
-.btn-success {
-  @apply bg-success hover:bg-success-light;
-}
+  .btn-success {
+    @apply bg-success hover:bg-success-light;
+  }
 
-.btn-warning {
-  @apply bg-warning hover:bg-warning-light;
-}
+  .btn-warning {
+    @apply bg-warning hover:bg-warning-light;
+  }
 
-.btn-danger {
-  @apply bg-danger hover:bg-danger-light;
+  .btn-danger {
+    @apply bg-danger hover:bg-danger-light;
+  }
 }
