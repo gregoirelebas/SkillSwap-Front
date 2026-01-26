@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/ui/header';
+import Home from './pages/Home';
 import Toolkit from './pages/Toolkit';
 
 export default function App() {
@@ -7,7 +8,8 @@ export default function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Toolkit />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/toolkit" element={<Toolkit />} />
       </Routes>
     </BrowserRouter>
   );
