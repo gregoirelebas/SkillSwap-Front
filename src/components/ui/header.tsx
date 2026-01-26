@@ -73,15 +73,15 @@ export default function Header() {
       </form>
       {/* Navigation Links */}
       <nav className="row gap-5">
-        <Link to="/explore">
+        <Link to="/explore" className="link">
           {' '}
-          <a>Explore</a>
+          Explore
         </Link>
-        <Link to="/categories">
-          <a>Categories</a>
+        <Link to="/categories" className="link">
+          Categories
         </Link>
-        <Link to="/how-it-works">
-          <a>How it works</a>
+        <Link to="/how-it-works" className="link">
+          How it works
         </Link>
       </nav>
       {/* User Actions */}
@@ -94,10 +94,8 @@ export default function Header() {
                 <span className="text-amber-700">5 credits</span>
               </div>
             </div>
-            <Link to="/chat">
-              <a className="text-lg rounded-lg p-2 hover:bg-neutral-200">
-                <FontAwesomeIcon icon={faComments} />
-              </a>
+            <Link to="/chat" className="link text-lg rounded-lg p-2 hover:bg-neutral-200">
+              <FontAwesomeIcon icon={faComments} />
             </Link>
           </>
         )}
@@ -114,16 +112,15 @@ export default function Header() {
           </button>
           {isMenuOpen && (
             <div className="absolute bg-white border border-neutral-200 shadow-md rounded-md w-48">
-              <a href="#profile" className="block px-4 py-2 hover:bg-neutral-100">
+              <Link to="/profile" className="link block px-4 py-2 hover:bg-neutral-100">
                 Profile
-              </a>
-              <a href="#settings" className="block px-4 py-2 hover:bg-neutral-100">
+              </Link>
+              <Link to="/settings" className="link block px-4 py-2 hover:bg-neutral-100">
                 Settings
-              </a>
-
-              <a className="block px-4 py-2 hover:bg-neutral-100" onClick={logout}>
+              </Link>
+              <span className="link block px-4 py-2 hover:bg-neutral-100" onClick={logout}>
                 Logout
-              </a>
+              </span>
             </div>
           )}
         </div>
